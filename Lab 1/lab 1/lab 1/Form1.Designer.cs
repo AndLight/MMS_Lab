@@ -40,9 +40,9 @@ namespace lab_1
             this.kanalskeSlikeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.invertFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.embossLaplacianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inplaceToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.novaSlikaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.gamaFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.edgeDetectDifferenceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.displacementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,7 +57,9 @@ namespace lab_1
             this.label1 = new System.Windows.Forms.Label();
             this.MBbufferSizeInput = new System.Windows.Forms.TextBox();
             this.MBbufferSizeOKbtn = new System.Windows.Forms.Button();
-            this.testBox = new System.Windows.Forms.TextBox();
+            this.GamaLabel = new System.Windows.Forms.Label();
+            this.GamaTrackBar = new System.Windows.Forms.TrackBar();
+            this.GamaValueLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -67,6 +69,7 @@ namespace lab_1
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.MBbufferSizePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GamaTrackBar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -94,7 +97,7 @@ namespace lab_1
             this.optionsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(950, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(588, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -120,6 +123,7 @@ namespace lab_1
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
@@ -134,7 +138,9 @@ namespace lab_1
             this.kanalskeSlikeToolStripMenuItem,
             this.invertFilterToolStripMenuItem,
             this.embossLaplacianToolStripMenuItem,
-            this.gamaFilterToolStripMenuItem});
+            this.gamaFilterToolStripMenuItem,
+            this.edgeDetectDifferenceToolStripMenuItem,
+            this.displacementToolStripMenuItem});
             this.filtersToolStripMenuItem.Name = "filtersToolStripMenuItem";
             this.filtersToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.filtersToolStripMenuItem.Text = "Filters";
@@ -142,43 +148,44 @@ namespace lab_1
             // kanalskeSlikeToolStripMenuItem
             // 
             this.kanalskeSlikeToolStripMenuItem.Name = "kanalskeSlikeToolStripMenuItem";
-            this.kanalskeSlikeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.kanalskeSlikeToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.kanalskeSlikeToolStripMenuItem.Text = "Kanalske slike";
             this.kanalskeSlikeToolStripMenuItem.Click += new System.EventHandler(this.kanalskeSlikeToolStripMenuItem_Click);
             // 
             // invertFilterToolStripMenuItem
             // 
             this.invertFilterToolStripMenuItem.Name = "invertFilterToolStripMenuItem";
-            this.invertFilterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.invertFilterToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.invertFilterToolStripMenuItem.Text = "Invert filter";
             this.invertFilterToolStripMenuItem.Click += new System.EventHandler(this.invertFilterToolStripMenuItem_Click);
             // 
             // embossLaplacianToolStripMenuItem
             // 
-            this.embossLaplacianToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.inplaceToolStripMenuItem1,
-            this.novaSlikaToolStripMenuItem1});
             this.embossLaplacianToolStripMenuItem.Name = "embossLaplacianToolStripMenuItem";
-            this.embossLaplacianToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.embossLaplacianToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.embossLaplacianToolStripMenuItem.Text = "Emboss Laplacian";
-            // 
-            // inplaceToolStripMenuItem1
-            // 
-            this.inplaceToolStripMenuItem1.Name = "inplaceToolStripMenuItem1";
-            this.inplaceToolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
-            this.inplaceToolStripMenuItem1.Text = "Inplace";
-            // 
-            // novaSlikaToolStripMenuItem1
-            // 
-            this.novaSlikaToolStripMenuItem1.Name = "novaSlikaToolStripMenuItem1";
-            this.novaSlikaToolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
-            this.novaSlikaToolStripMenuItem1.Text = "Nova slika";
+            this.embossLaplacianToolStripMenuItem.Click += new System.EventHandler(this.embossLaplacianToolStripMenuItem_Click);
             // 
             // gamaFilterToolStripMenuItem
             // 
             this.gamaFilterToolStripMenuItem.Name = "gamaFilterToolStripMenuItem";
-            this.gamaFilterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gamaFilterToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.gamaFilterToolStripMenuItem.Text = "Gama filter";
+            this.gamaFilterToolStripMenuItem.Click += new System.EventHandler(this.gamaFilterToolStripMenuItem_Click);
+            // 
+            // edgeDetectDifferenceToolStripMenuItem
+            // 
+            this.edgeDetectDifferenceToolStripMenuItem.Name = "edgeDetectDifferenceToolStripMenuItem";
+            this.edgeDetectDifferenceToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.edgeDetectDifferenceToolStripMenuItem.Text = "Edge Detect Difference";
+            this.edgeDetectDifferenceToolStripMenuItem.Click += new System.EventHandler(this.edgeDetectDifferenceToolStripMenuItem_Click);
+            // 
+            // displacementToolStripMenuItem
+            // 
+            this.displacementToolStripMenuItem.Name = "displacementToolStripMenuItem";
+            this.displacementToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.displacementToolStripMenuItem.Text = "Random Jiter";
+            this.displacementToolStripMenuItem.Click += new System.EventHandler(this.displacementToolStripMenuItem_Click);
             // 
             // optionsToolStripMenuItem
             // 
@@ -195,12 +202,14 @@ namespace lab_1
             this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
             this.undoToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.undoToolStripMenuItem.Text = "Undo";
+            this.undoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
             // 
             // redoToolStripMenuItem
             // 
             this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
             this.redoToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.redoToolStripMenuItem.Text = "Redo";
+            this.redoToolStripMenuItem.Click += new System.EventHandler(this.redoToolStripMenuItem_Click);
             // 
             // podesavanjeToolStripMenuItem
             // 
@@ -219,6 +228,7 @@ namespace lab_1
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ControlText;
             this.panel2.Controls.Add(this.pictureBox5);
             this.panel2.Controls.Add(this.pictureBox4);
             this.panel2.Controls.Add(this.pictureBox3);
@@ -301,19 +311,45 @@ namespace lab_1
             this.MBbufferSizeOKbtn.Text = "OK";
             this.MBbufferSizeOKbtn.UseVisualStyleBackColor = true;
             // 
-            // testBox
+            // GamaLabel
             // 
-            this.testBox.Location = new System.Drawing.Point(120, 430);
-            this.testBox.Name = "testBox";
-            this.testBox.Size = new System.Drawing.Size(205, 23);
-            this.testBox.TabIndex = 4;
+            this.GamaLabel.AutoSize = true;
+            this.GamaLabel.Location = new System.Drawing.Point(34, 421);
+            this.GamaLabel.Name = "GamaLabel";
+            this.GamaLabel.Size = new System.Drawing.Size(38, 15);
+            this.GamaLabel.TabIndex = 5;
+            this.GamaLabel.Text = "Gama";
+            this.GamaLabel.Visible = false;
+            // 
+            // GamaTrackBar
+            // 
+            this.GamaTrackBar.Location = new System.Drawing.Point(78, 411);
+            this.GamaTrackBar.Minimum = 1;
+            this.GamaTrackBar.Name = "GamaTrackBar";
+            this.GamaTrackBar.Size = new System.Drawing.Size(231, 45);
+            this.GamaTrackBar.TabIndex = 6;
+            this.GamaTrackBar.Value = 1;
+            this.GamaTrackBar.Visible = false;
+            this.GamaTrackBar.Scroll += new System.EventHandler(this.GamaTrackBar_Scroll_1);
+            // 
+            // GamaValueLabel
+            // 
+            this.GamaValueLabel.AutoSize = true;
+            this.GamaValueLabel.Location = new System.Drawing.Point(316, 420);
+            this.GamaValueLabel.Name = "GamaValueLabel";
+            this.GamaValueLabel.Size = new System.Drawing.Size(13, 15);
+            this.GamaValueLabel.TabIndex = 7;
+            this.GamaValueLabel.Text = "1";
+            this.GamaValueLabel.Visible = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(950, 477);
-            this.Controls.Add(this.testBox);
+            this.ClientSize = new System.Drawing.Size(588, 477);
+            this.Controls.Add(this.GamaValueLabel);
+            this.Controls.Add(this.GamaTrackBar);
+            this.Controls.Add(this.GamaLabel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
@@ -332,6 +368,7 @@ namespace lab_1
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.MBbufferSizePanel.ResumeLayout(false);
             this.MBbufferSizePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GamaTrackBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -351,8 +388,6 @@ namespace lab_1
         private System.Windows.Forms.ToolStripMenuItem kanalskeSlikeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem invertFilterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem embossLaplacianToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem inplaceToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem novaSlikaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem gamaFilterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem undoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem redoToolStripMenuItem;
@@ -367,7 +402,11 @@ namespace lab_1
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox MBbufferSizeInput;
         private System.Windows.Forms.Button MBbufferSizeOKbtn;
-        private System.Windows.Forms.TextBox testBox;
+        private System.Windows.Forms.Label GamaLabel;
+        private System.Windows.Forms.TrackBar GamaTrackBar;
+        private System.Windows.Forms.Label GamaValueLabel;
+        private System.Windows.Forms.ToolStripMenuItem edgeDetectDifferenceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem displacementToolStripMenuItem;
     }
 }
 
