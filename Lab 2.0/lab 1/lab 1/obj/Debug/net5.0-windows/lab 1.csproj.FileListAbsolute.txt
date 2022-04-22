@@ -1,0 +1,59 @@
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\Lab\Lab 1\lab 1\lab 1\bin\Debug\net5.0-windows\lab 1.exe
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\Lab\Lab 1\lab 1\lab 1\bin\Debug\net5.0-windows\lab 1.deps.json
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\Lab\Lab 1\lab 1\lab 1\bin\Debug\net5.0-windows\lab 1.runtimeconfig.json
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\Lab\Lab 1\lab 1\lab 1\bin\Debug\net5.0-windows\lab 1.runtimeconfig.dev.json
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\Lab\Lab 1\lab 1\lab 1\bin\Debug\net5.0-windows\lab 1.dll
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\Lab\Lab 1\lab 1\lab 1\bin\Debug\net5.0-windows\ref\lab 1.dll
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\Lab\Lab 1\lab 1\lab 1\bin\Debug\net5.0-windows\lab 1.pdb
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\Lab\Lab 1\lab 1\lab 1\obj\Debug\net5.0-windows\lab 1.csproj.AssemblyReference.cache
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\Lab\Lab 1\lab 1\lab 1\obj\Debug\net5.0-windows\lab_1.Form1.resources
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\Lab\Lab 1\lab 1\lab 1\obj\Debug\net5.0-windows\lab_1.Properties.Resources.resources
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\Lab\Lab 1\lab 1\lab 1\obj\Debug\net5.0-windows\lab 1.csproj.GenerateResource.cache
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\Lab\Lab 1\lab 1\lab 1\obj\Debug\net5.0-windows\lab 1.GeneratedMSBuildEditorConfig.editorconfig
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\Lab\Lab 1\lab 1\lab 1\obj\Debug\net5.0-windows\lab 1.AssemblyInfoInputs.cache
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\Lab\Lab 1\lab 1\lab 1\obj\Debug\net5.0-windows\lab 1.AssemblyInfo.cs
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\Lab\Lab 1\lab 1\lab 1\obj\Debug\net5.0-windows\lab 1.csproj.CoreCompileInputs.cache
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\Lab\Lab 1\lab 1\lab 1\obj\Debug\net5.0-windows\lab 1.dll
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\Lab\Lab 1\lab 1\lab 1\obj\Debug\net5.0-windows\ref\lab 1.dll
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\Lab\Lab 1\lab 1\lab 1\obj\Debug\net5.0-windows\lab 1.pdb
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\Lab\Lab 1\lab 1\lab 1\obj\Debug\net5.0-windows\lab 1.genruntimeconfig.cache
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 1\lab 1\lab 1\bin\Debug\net5.0-windows\lab 1.exe
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 1\lab 1\lab 1\bin\Debug\net5.0-windows\lab 1.deps.json
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 1\lab 1\lab 1\bin\Debug\net5.0-windows\lab 1.runtimeconfig.json
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 1\lab 1\lab 1\bin\Debug\net5.0-windows\lab 1.runtimeconfig.dev.json
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 1\lab 1\lab 1\bin\Debug\net5.0-windows\lab 1.dll
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 1\lab 1\lab 1\bin\Debug\net5.0-windows\ref\lab 1.dll
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 1\lab 1\lab 1\bin\Debug\net5.0-windows\lab 1.pdb
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 1\lab 1\lab 1\obj\Debug\net5.0-windows\lab 1.csproj.AssemblyReference.cache
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 1\lab 1\lab 1\obj\Debug\net5.0-windows\lab_1.Form1.resources
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 1\lab 1\lab 1\obj\Debug\net5.0-windows\lab_1.Properties.Resources.resources
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 1\lab 1\lab 1\obj\Debug\net5.0-windows\lab 1.csproj.GenerateResource.cache
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 1\lab 1\lab 1\obj\Debug\net5.0-windows\lab 1.GeneratedMSBuildEditorConfig.editorconfig
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 1\lab 1\lab 1\obj\Debug\net5.0-windows\lab 1.AssemblyInfoInputs.cache
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 1\lab 1\lab 1\obj\Debug\net5.0-windows\lab 1.AssemblyInfo.cs
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 1\lab 1\lab 1\obj\Debug\net5.0-windows\lab 1.csproj.CoreCompileInputs.cache
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 1\lab 1\lab 1\obj\Debug\net5.0-windows\lab 1.dll
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 1\lab 1\lab 1\obj\Debug\net5.0-windows\ref\lab 1.dll
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 1\lab 1\lab 1\obj\Debug\net5.0-windows\lab 1.pdb
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 1\lab 1\lab 1\obj\Debug\net5.0-windows\lab 1.genruntimeconfig.cache
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 2.0\lab 1\lab 1\bin\Debug\net5.0-windows\lab 1.exe
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 2.0\lab 1\lab 1\bin\Debug\net5.0-windows\lab 1.deps.json
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 2.0\lab 1\lab 1\bin\Debug\net5.0-windows\lab 1.runtimeconfig.json
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 2.0\lab 1\lab 1\bin\Debug\net5.0-windows\lab 1.runtimeconfig.dev.json
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 2.0\lab 1\lab 1\bin\Debug\net5.0-windows\lab 1.dll
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 2.0\lab 1\lab 1\bin\Debug\net5.0-windows\ref\lab 1.dll
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 2.0\lab 1\lab 1\bin\Debug\net5.0-windows\lab 1.pdb
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 2.0\lab 1\lab 1\bin\Debug\net5.0-windows\System.Windows.Forms.DataVisualization.dll
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 2.0\lab 1\lab 1\obj\Debug\net5.0-windows\lab 1.csproj.AssemblyReference.cache
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 2.0\lab 1\lab 1\obj\Debug\net5.0-windows\lab_1.Form1.resources
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 2.0\lab 1\lab 1\obj\Debug\net5.0-windows\lab_1.Properties.Resources.resources
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 2.0\lab 1\lab 1\obj\Debug\net5.0-windows\lab 1.csproj.GenerateResource.cache
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 2.0\lab 1\lab 1\obj\Debug\net5.0-windows\lab 1.GeneratedMSBuildEditorConfig.editorconfig
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 2.0\lab 1\lab 1\obj\Debug\net5.0-windows\lab 1.AssemblyInfoInputs.cache
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 2.0\lab 1\lab 1\obj\Debug\net5.0-windows\lab 1.AssemblyInfo.cs
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 2.0\lab 1\lab 1\obj\Debug\net5.0-windows\lab 1.csproj.CoreCompileInputs.cache
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 2.0\lab 1\lab 1\obj\Debug\net5.0-windows\lab 1.csproj.CopyComplete
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 2.0\lab 1\lab 1\obj\Debug\net5.0-windows\lab 1.dll
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 2.0\lab 1\lab 1\obj\Debug\net5.0-windows\ref\lab 1.dll
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 2.0\lab 1\lab 1\obj\Debug\net5.0-windows\lab 1.pdb
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 2.0\lab 1\lab 1\obj\Debug\net5.0-windows\lab 1.genruntimeconfig.cache

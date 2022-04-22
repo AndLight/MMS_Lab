@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "WfF3+HH2sQJTvdRqzvWoz72J8ZYaMSmF6O49IOZtsrfEBkiBrKKLhDFUtFAyKqj5DzqwUbvvMG9ixITYlIw0WA==",
+  "success": true,
+  "projectFilePath": "D:\\AndLight\\OneDrive - Faculty of Electronic Engineering\\Fax\\VIII_Semestar\\Multimedijalni sistemi\\2021-22\\MMS_Lab\\Lab 2.0\\lab 1\\lab 1\\lab 1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\AndrijaMijajlovic\\.nuget\\packages\\maikebing.system.windows.forms.datavisualization\\5.0.1\\maikebing.system.windows.forms.datavisualization.5.0.1.nupkg.sha512",
+    "C:\\Users\\AndrijaMijajlovic\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\AndrijaMijajlovic\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\AndrijaMijajlovic\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "C:\\Users\\AndrijaMijajlovic\\.nuget\\packages\\system.drawing.common\\5.0.0\\system.drawing.common.5.0.0.nupkg.sha512",
+    "C:\\Users\\AndrijaMijajlovic\\.nuget\\packages\\system.drawing.primitives\\4.3.0\\system.drawing.primitives.4.3.0.nupkg.sha512",
+    "C:\\Users\\AndrijaMijajlovic\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512",
+    "C:\\Users\\AndrijaMijajlovic\\.nuget\\packages\\system.runtime.extensions\\4.3.0\\system.runtime.extensions.4.3.0.nupkg.sha512",
+    "C:\\Users\\AndrijaMijajlovic\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
