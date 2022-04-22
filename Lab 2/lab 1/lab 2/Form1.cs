@@ -716,7 +716,6 @@ namespace lab_1
         //LAB 2 /////////////////////////////////////////////////////////////////////////////////////////
 
         
-
         private void makeHistogramsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if(bmp == null)
@@ -899,6 +898,53 @@ namespace lab_1
                 }
             }
             testLabel.Text = this.max.ToString();
+        }
+
+        private void grayScaleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            if(bmp == null)
+            {
+                loadImage();
+            }
+
+            panelGray.Show();
+            panelGray.BringToFront();
+
+            GrayOriginal.Image = bmp;
+            Bitmap image = new Bitmap(bmp);
+
+            Bitmap gray1 = new Bitmap(image.Width, image.Height); ;
+            Bitmap gray2 = new Bitmap(image.Width, image.Height); ;
+            Bitmap gray3 = new Bitmap(image.Width, image.Height); ;
+
+            for (int i = 0; i < image.Height; i++)
+            {
+                for (int j = 0; j < image.Width; j++)
+                {
+                    Color pixel = image.GetPixel(j, i);
+
+                    //1
+                    int gray_1 = (pixel.R + pixel.G + pixel.B) / 3;
+                    Color g1 = Color.FromArgb(pixel.A, gray_1, gray_1, gray_1);
+                    gray1.SetPixel(j, i, g1);
+
+                    //2
+                    int gray_2 = Math.Max(pixel.R, Math.Max(pixel.G, pixel.B));
+                    Color g2 = Color.FromArgb(pixel.A, gray_2, gray_2, gray_2);
+                    gray2.SetPixel(j, i, g2);
+
+                    //3
+                    int gray_3 = (Math.Max(pixel.R, Math.Max(pixel.G, pixel.B)) + Math.Min(pixel.R, Math.Min(pixel.G, pixel.B))) /2;
+                    Color g3 = Color.FromArgb(pixel.A, gray_3, gray_3, gray_3);
+                    gray3.SetPixel(j, i, g3);
+                }
+            }
+
+            Gray1.Image = gray1;
+            Gray2.Image = gray2;
+            Gray3.Image = gray3;
+
         }
     }
 }
