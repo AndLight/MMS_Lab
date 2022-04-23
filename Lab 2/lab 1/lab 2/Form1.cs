@@ -946,6 +946,86 @@ namespace lab_1
             Gray3.Image = gray3;
 
         }
+
+        private void orderedDitheringToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            if(bmp == null) { loadImage(); }
+            
+            panelDithering.Show();
+            panelDithering.BringToFront();
+
+            pictureBoxDitheringOrigilan.Image = bmp;
+
+            Bitmap temp = (Bitmap)bmp.Clone();
+            OrderedDitheringApply(temp, 2, 4);
+            pictureBoxDitheringNew.Image = temp;
+
+
+        }
+
+        public void OrderedDitheringApply(Bitmap b, int colorsNum, int thresholdSize)
+        {
+
+            float[,] dither2x2Matrix =
+            new float[,] { { 1, 3 },
+                           { 4, 2 } };
+
+            float[,] dither3x3Matrix =
+                new float[,] { { 8, 3, 4 },
+                               { 6, 1, 2 },
+                               { 7, 5, 9 } };
+
+            float[,] dither4x4Matrix =
+                new float[,] { { 1, 9, 3, 11 },
+                               { 13, 5, 15, 7 },
+                               { 4, 12, 2, 10 },
+                               {16, 8, 14, 6 } };
+
+            Bitmap bitmap = b;
+
+            float[,] bayerMatrix;
+
+            if (thresholdSize == 2)
+            {
+                bayerMatrix = new float[2, 2];
+                for (int i = 0; i < 2; ++i)
+                    for (int j = 0; j < 2; ++j)
+                        bayerMatrix[i, j] = dither2x2Matrix[i, j] / 5;
+            }
+            else if(thresholdSize == 3)
+            {
+                bayerMatrix = new float[3, 3];
+                for (int i = 0; i < 3; ++i)
+                    for (int j = 0; j < 3; ++j)
+                        bayerMatrix[i, j] = dither3x3Matrix[i, j] / 10;
+            } else
+            {
+                bayerMatrix = new float[4, 4];
+                for (int i = 0; i < 4; ++i)
+                    for (int j = 0; j < 4; ++j)
+                        bayerMatrix[i, j] = dither4x4Matrix[i, j] / 17;
+            }
+
+            for (int i = 0; i < bitmap.Width; ++i)
+                for (int j = 0; j < bitmap.Height; ++j)
+                {
+
+                    Color color = bitmap.GetPixel(i, j);
+                    float colorIntensity = color.GetBrightness();
+
+                    float tempValue = (float)(Math.Floor((double)((colorsNum - 1) * colorIntensity)));
+                    float re = (colorsNum - 1) * colorIntensity - tempValue;
+
+                    if (re >= bayerMatrix[i % thresholdSize, j % thresholdSize])
+                        tempValue++;
+
+                    if (tempValue == 0)
+                        bitmap.SetPixel(i, j, Color.FromArgb(0, 0, 0));
+                    else
+                        bitmap.SetPixel(i, j, Color.FromArgb(255, 255, 255));
+                }
+        }
     }
 }
 

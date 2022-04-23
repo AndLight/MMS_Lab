@@ -56,6 +56,10 @@ namespace lab_1
             this.makeHistogramsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setMinValueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setMaxValueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.grayScaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ditheringToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.orderedDitheringToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.floydSteinbergToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -79,12 +83,14 @@ namespace lab_1
             this.chartRed = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pictureBoxChart = new System.Windows.Forms.PictureBox();
             this.testLabel = new System.Windows.Forms.Label();
-            this.grayScaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelGray = new System.Windows.Forms.Panel();
-            this.GrayOriginal = new System.Windows.Forms.PictureBox();
-            this.Gray1 = new System.Windows.Forms.PictureBox();
-            this.Gray2 = new System.Windows.Forms.PictureBox();
             this.Gray3 = new System.Windows.Forms.PictureBox();
+            this.Gray2 = new System.Windows.Forms.PictureBox();
+            this.Gray1 = new System.Windows.Forms.PictureBox();
+            this.GrayOriginal = new System.Windows.Forms.PictureBox();
+            this.panelDithering = new System.Windows.Forms.Panel();
+            this.pictureBoxDitheringNew = new System.Windows.Forms.PictureBox();
+            this.pictureBoxDitheringOrigilan = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -101,10 +107,13 @@ namespace lab_1
             ((System.ComponentModel.ISupportInitialize)(this.chartRed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxChart)).BeginInit();
             this.panelGray.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GrayOriginal)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Gray1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Gray2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Gray3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Gray2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Gray1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GrayOriginal)).BeginInit();
+            this.panelDithering.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDitheringNew)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDitheringOrigilan)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -178,7 +187,8 @@ namespace lab_1
             this.edgeDetectDifferenceToolStripMenuItem,
             this.displacementToolStripMenuItem,
             this.chanelHistogramToolStripMenuItem,
-            this.grayScaleToolStripMenuItem});
+            this.grayScaleToolStripMenuItem,
+            this.ditheringToolStripMenuItem});
             this.filtersToolStripMenuItem.Name = "filtersToolStripMenuItem";
             this.filtersToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.filtersToolStripMenuItem.Text = "Filters";
@@ -238,23 +248,52 @@ namespace lab_1
             // makeHistogramsToolStripMenuItem
             // 
             this.makeHistogramsToolStripMenuItem.Name = "makeHistogramsToolStripMenuItem";
-            this.makeHistogramsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.makeHistogramsToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.makeHistogramsToolStripMenuItem.Text = "Make Histograms";
             this.makeHistogramsToolStripMenuItem.Click += new System.EventHandler(this.makeHistogramsToolStripMenuItem_Click);
             // 
             // setMinValueToolStripMenuItem
             // 
             this.setMinValueToolStripMenuItem.Name = "setMinValueToolStripMenuItem";
-            this.setMinValueToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.setMinValueToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.setMinValueToolStripMenuItem.Text = "Set Min Value";
             this.setMinValueToolStripMenuItem.Click += new System.EventHandler(this.setMinValueToolStripMenuItem_Click);
             // 
             // setMaxValueToolStripMenuItem
             // 
             this.setMaxValueToolStripMenuItem.Name = "setMaxValueToolStripMenuItem";
-            this.setMaxValueToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.setMaxValueToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.setMaxValueToolStripMenuItem.Text = "Set Max Value";
             this.setMaxValueToolStripMenuItem.Click += new System.EventHandler(this.setMaxValueToolStripMenuItem_Click);
+            // 
+            // grayScaleToolStripMenuItem
+            // 
+            this.grayScaleToolStripMenuItem.Name = "grayScaleToolStripMenuItem";
+            this.grayScaleToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.grayScaleToolStripMenuItem.Text = "Gray scale";
+            this.grayScaleToolStripMenuItem.Click += new System.EventHandler(this.grayScaleToolStripMenuItem_Click);
+            // 
+            // ditheringToolStripMenuItem
+            // 
+            this.ditheringToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.orderedDitheringToolStripMenuItem,
+            this.floydSteinbergToolStripMenuItem});
+            this.ditheringToolStripMenuItem.Name = "ditheringToolStripMenuItem";
+            this.ditheringToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.ditheringToolStripMenuItem.Text = "Dithering";
+            // 
+            // orderedDitheringToolStripMenuItem
+            // 
+            this.orderedDitheringToolStripMenuItem.Name = "orderedDitheringToolStripMenuItem";
+            this.orderedDitheringToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.orderedDitheringToolStripMenuItem.Text = "Ordered Dithering";
+            this.orderedDitheringToolStripMenuItem.Click += new System.EventHandler(this.orderedDitheringToolStripMenuItem_Click);
+            // 
+            // floydSteinbergToolStripMenuItem
+            // 
+            this.floydSteinbergToolStripMenuItem.Name = "floydSteinbergToolStripMenuItem";
+            this.floydSteinbergToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.floydSteinbergToolStripMenuItem.Text = "Floyd Steinberg";
             // 
             // optionsToolStripMenuItem
             // 
@@ -491,13 +530,6 @@ namespace lab_1
             this.testLabel.TabIndex = 10;
             this.testLabel.Text = "label2";
             // 
-            // grayScaleToolStripMenuItem
-            // 
-            this.grayScaleToolStripMenuItem.Name = "grayScaleToolStripMenuItem";
-            this.grayScaleToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.grayScaleToolStripMenuItem.Text = "Gray scale";
-            this.grayScaleToolStripMenuItem.Click += new System.EventHandler(this.grayScaleToolStripMenuItem_Click);
-            // 
             // panelGray
             // 
             this.panelGray.Controls.Add(this.Gray3);
@@ -510,23 +542,14 @@ namespace lab_1
             this.panelGray.TabIndex = 11;
             this.panelGray.Visible = false;
             // 
-            // GrayOriginal
+            // Gray3
             // 
-            this.GrayOriginal.Location = new System.Drawing.Point(3, 19);
-            this.GrayOriginal.Name = "GrayOriginal";
-            this.GrayOriginal.Size = new System.Drawing.Size(271, 169);
-            this.GrayOriginal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.GrayOriginal.TabIndex = 0;
-            this.GrayOriginal.TabStop = false;
-            // 
-            // Gray1
-            // 
-            this.Gray1.Location = new System.Drawing.Point(280, 19);
-            this.Gray1.Name = "Gray1";
-            this.Gray1.Size = new System.Drawing.Size(271, 169);
-            this.Gray1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Gray1.TabIndex = 0;
-            this.Gray1.TabStop = false;
+            this.Gray3.Location = new System.Drawing.Point(0, 196);
+            this.Gray3.Name = "Gray3";
+            this.Gray3.Size = new System.Drawing.Size(271, 169);
+            this.Gray3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Gray3.TabIndex = 0;
+            this.Gray3.TabStop = false;
             // 
             // Gray2
             // 
@@ -537,20 +560,55 @@ namespace lab_1
             this.Gray2.TabIndex = 0;
             this.Gray2.TabStop = false;
             // 
-            // Gray3
+            // Gray1
             // 
-            this.Gray3.Location = new System.Drawing.Point(0, 196);
-            this.Gray3.Name = "Gray3";
-            this.Gray3.Size = new System.Drawing.Size(271, 169);
-            this.Gray3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Gray3.TabIndex = 0;
-            this.Gray3.TabStop = false;
+            this.Gray1.Location = new System.Drawing.Point(280, 19);
+            this.Gray1.Name = "Gray1";
+            this.Gray1.Size = new System.Drawing.Size(271, 169);
+            this.Gray1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Gray1.TabIndex = 0;
+            this.Gray1.TabStop = false;
+            // 
+            // GrayOriginal
+            // 
+            this.GrayOriginal.Location = new System.Drawing.Point(3, 19);
+            this.GrayOriginal.Name = "GrayOriginal";
+            this.GrayOriginal.Size = new System.Drawing.Size(271, 169);
+            this.GrayOriginal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.GrayOriginal.TabIndex = 0;
+            this.GrayOriginal.TabStop = false;
+            // 
+            // panelDithering
+            // 
+            this.panelDithering.Controls.Add(this.pictureBoxDitheringNew);
+            this.panelDithering.Controls.Add(this.pictureBoxDitheringOrigilan);
+            this.panelDithering.Location = new System.Drawing.Point(15, 30);
+            this.panelDithering.Name = "panelDithering";
+            this.panelDithering.Size = new System.Drawing.Size(706, 486);
+            this.panelDithering.TabIndex = 12;
+            // 
+            // pictureBoxDitheringNew
+            // 
+            this.pictureBoxDitheringNew.Location = new System.Drawing.Point(366, 33);
+            this.pictureBoxDitheringNew.Name = "pictureBoxDitheringNew";
+            this.pictureBoxDitheringNew.Size = new System.Drawing.Size(326, 280);
+            this.pictureBoxDitheringNew.TabIndex = 0;
+            this.pictureBoxDitheringNew.TabStop = false;
+            // 
+            // pictureBoxDitheringOrigilan
+            // 
+            this.pictureBoxDitheringOrigilan.Location = new System.Drawing.Point(17, 32);
+            this.pictureBoxDitheringOrigilan.Name = "pictureBoxDitheringOrigilan";
+            this.pictureBoxDitheringOrigilan.Size = new System.Drawing.Size(326, 280);
+            this.pictureBoxDitheringOrigilan.TabIndex = 0;
+            this.pictureBoxDitheringOrigilan.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1003, 552);
+            this.Controls.Add(this.panelDithering);
             this.Controls.Add(this.panelGray);
             this.Controls.Add(this.ChartPanel);
             this.Controls.Add(this.testLabel);
@@ -582,10 +640,13 @@ namespace lab_1
             ((System.ComponentModel.ISupportInitialize)(this.chartRed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxChart)).EndInit();
             this.panelGray.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.GrayOriginal)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Gray1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Gray2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Gray3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Gray2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Gray1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GrayOriginal)).EndInit();
+            this.panelDithering.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDitheringNew)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDitheringOrigilan)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -640,6 +701,12 @@ namespace lab_1
         private System.Windows.Forms.PictureBox Gray2;
         private System.Windows.Forms.PictureBox Gray1;
         private System.Windows.Forms.PictureBox GrayOriginal;
+        private System.Windows.Forms.ToolStripMenuItem ditheringToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem orderedDitheringToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem floydSteinbergToolStripMenuItem;
+        private System.Windows.Forms.Panel panelDithering;
+        private System.Windows.Forms.PictureBox pictureBoxDitheringNew;
+        private System.Windows.Forms.PictureBox pictureBoxDitheringOrigilan;
     }
 }
 
