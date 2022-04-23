@@ -29,15 +29,15 @@ namespace lab_1
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -60,6 +60,7 @@ namespace lab_1
             this.ditheringToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orderedDitheringToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.floydSteinbergToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.simpleColorizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -91,6 +92,13 @@ namespace lab_1
             this.panelDithering = new System.Windows.Forms.Panel();
             this.pictureBoxDitheringNew = new System.Windows.Forms.PictureBox();
             this.pictureBoxDitheringOrigilan = new System.Windows.Forms.PictureBox();
+            this.panelColor = new System.Windows.Forms.Panel();
+            this.labelSaturation = new System.Windows.Forms.Label();
+            this.HueLabel = new System.Windows.Forms.Label();
+            this.trackBarSaturation = new System.Windows.Forms.TrackBar();
+            this.trackBarHue = new System.Windows.Forms.TrackBar();
+            this.pictureColorNew = new System.Windows.Forms.PictureBox();
+            this.pictureColorOriginal = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -114,14 +122,19 @@ namespace lab_1
             this.panelDithering.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDitheringNew)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDitheringOrigilan)).BeginInit();
+            this.panelColor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarSaturation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarHue)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureColorNew)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureColorOriginal)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(10, 33);
+            this.panel1.Location = new System.Drawing.Point(13, 33);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(423, 310);
+            this.panel1.Size = new System.Drawing.Size(717, 486);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox1
@@ -188,7 +201,8 @@ namespace lab_1
             this.displacementToolStripMenuItem,
             this.chanelHistogramToolStripMenuItem,
             this.grayScaleToolStripMenuItem,
-            this.ditheringToolStripMenuItem});
+            this.ditheringToolStripMenuItem,
+            this.simpleColorizeToolStripMenuItem});
             this.filtersToolStripMenuItem.Name = "filtersToolStripMenuItem";
             this.filtersToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.filtersToolStripMenuItem.Text = "Filters";
@@ -294,6 +308,14 @@ namespace lab_1
             this.floydSteinbergToolStripMenuItem.Name = "floydSteinbergToolStripMenuItem";
             this.floydSteinbergToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.floydSteinbergToolStripMenuItem.Text = "Floyd Steinberg";
+            this.floydSteinbergToolStripMenuItem.Click += new System.EventHandler(this.floydSteinbergToolStripMenuItem_Click);
+            // 
+            // simpleColorizeToolStripMenuItem
+            // 
+            this.simpleColorizeToolStripMenuItem.Name = "simpleColorizeToolStripMenuItem";
+            this.simpleColorizeToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.simpleColorizeToolStripMenuItem.Text = "Colorize";
+            this.simpleColorizeToolStripMenuItem.Click += new System.EventHandler(this.simpleColorizeToolStripMenuItem_Click);
             // 
             // optionsToolStripMenuItem
             // 
@@ -341,9 +363,9 @@ namespace lab_1
             this.panel2.Controls.Add(this.pictureBox4);
             this.panel2.Controls.Add(this.pictureBox3);
             this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Location = new System.Drawing.Point(10, 33);
+            this.panel2.Location = new System.Drawing.Point(15, 33);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(423, 310);
+            this.panel2.Size = new System.Drawing.Size(715, 482);
             this.panel2.TabIndex = 2;
             this.panel2.Visible = false;
             // 
@@ -456,7 +478,7 @@ namespace lab_1
             this.ChartPanel.Controls.Add(this.chartGreen);
             this.ChartPanel.Controls.Add(this.chartRed);
             this.ChartPanel.Controls.Add(this.pictureBoxChart);
-            this.ChartPanel.Location = new System.Drawing.Point(12, 27);
+            this.ChartPanel.Location = new System.Drawing.Point(16, 23);
             this.ChartPanel.Name = "ChartPanel";
             this.ChartPanel.Size = new System.Drawing.Size(709, 495);
             this.ChartPanel.TabIndex = 9;
@@ -464,50 +486,50 @@ namespace lab_1
             // 
             // chartBlue
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chartBlue.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chartBlue.Legends.Add(legend4);
+            chartArea1.Name = "ChartArea1";
+            this.chartBlue.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartBlue.Legends.Add(legend1);
             this.chartBlue.Location = new System.Drawing.Point(362, 253);
             this.chartBlue.Name = "chartBlue";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Blue";
-            this.chartBlue.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Blue";
+            this.chartBlue.Series.Add(series1);
             this.chartBlue.Size = new System.Drawing.Size(333, 235);
             this.chartBlue.TabIndex = 1;
             this.chartBlue.Text = "chart1";
             // 
             // chartGreen
             // 
-            chartArea5.Name = "ChartArea1";
-            this.chartGreen.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chartGreen.Legends.Add(legend5);
+            chartArea2.Name = "ChartArea1";
+            this.chartGreen.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartGreen.Legends.Add(legend2);
             this.chartGreen.Location = new System.Drawing.Point(13, 253);
             this.chartGreen.Name = "chartGreen";
-            series5.ChartArea = "ChartArea1";
-            series5.Color = System.Drawing.Color.ForestGreen;
-            series5.Legend = "Legend1";
-            series5.Name = "Green";
-            this.chartGreen.Series.Add(series5);
+            series2.ChartArea = "ChartArea1";
+            series2.Color = System.Drawing.Color.ForestGreen;
+            series2.Legend = "Legend1";
+            series2.Name = "Green";
+            this.chartGreen.Series.Add(series2);
             this.chartGreen.Size = new System.Drawing.Size(333, 235);
             this.chartGreen.TabIndex = 1;
             this.chartGreen.Text = "chart1";
             // 
             // chartRed
             // 
-            chartArea6.Name = "ChartArea1";
-            this.chartRed.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.chartRed.Legends.Add(legend6);
+            chartArea3.Name = "ChartArea1";
+            this.chartRed.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartRed.Legends.Add(legend3);
             this.chartRed.Location = new System.Drawing.Point(362, 12);
             this.chartRed.Name = "chartRed";
-            series6.ChartArea = "ChartArea1";
-            series6.Color = System.Drawing.Color.Red;
-            series6.Legend = "Legend1";
-            series6.Name = "Red";
-            this.chartRed.Series.Add(series6);
+            series3.ChartArea = "ChartArea1";
+            series3.Color = System.Drawing.Color.Red;
+            series3.Legend = "Legend1";
+            series3.Name = "Red";
+            this.chartRed.Series.Add(series3);
             this.chartRed.Size = new System.Drawing.Size(333, 235);
             this.chartRed.TabIndex = 1;
             this.chartRed.Text = "chart1";
@@ -536,7 +558,7 @@ namespace lab_1
             this.panelGray.Controls.Add(this.Gray2);
             this.panelGray.Controls.Add(this.Gray1);
             this.panelGray.Controls.Add(this.GrayOriginal);
-            this.panelGray.Location = new System.Drawing.Point(10, 33);
+            this.panelGray.Location = new System.Drawing.Point(14, 33);
             this.panelGray.Name = "panelGray";
             this.panelGray.Size = new System.Drawing.Size(703, 486);
             this.panelGray.TabIndex = 11;
@@ -592,6 +614,7 @@ namespace lab_1
             this.pictureBoxDitheringNew.Location = new System.Drawing.Point(366, 33);
             this.pictureBoxDitheringNew.Name = "pictureBoxDitheringNew";
             this.pictureBoxDitheringNew.Size = new System.Drawing.Size(326, 280);
+            this.pictureBoxDitheringNew.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxDitheringNew.TabIndex = 0;
             this.pictureBoxDitheringNew.TabStop = false;
             // 
@@ -600,14 +623,85 @@ namespace lab_1
             this.pictureBoxDitheringOrigilan.Location = new System.Drawing.Point(17, 32);
             this.pictureBoxDitheringOrigilan.Name = "pictureBoxDitheringOrigilan";
             this.pictureBoxDitheringOrigilan.Size = new System.Drawing.Size(326, 280);
+            this.pictureBoxDitheringOrigilan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxDitheringOrigilan.TabIndex = 0;
             this.pictureBoxDitheringOrigilan.TabStop = false;
+            // 
+            // panelColor
+            // 
+            this.panelColor.Controls.Add(this.labelSaturation);
+            this.panelColor.Controls.Add(this.HueLabel);
+            this.panelColor.Controls.Add(this.trackBarSaturation);
+            this.panelColor.Controls.Add(this.trackBarHue);
+            this.panelColor.Controls.Add(this.pictureColorNew);
+            this.panelColor.Controls.Add(this.pictureColorOriginal);
+            this.panelColor.Location = new System.Drawing.Point(16, 30);
+            this.panelColor.Name = "panelColor";
+            this.panelColor.Size = new System.Drawing.Size(730, 481);
+            this.panelColor.TabIndex = 13;
+            this.panelColor.Visible = false;
+            // 
+            // labelSaturation
+            // 
+            this.labelSaturation.AutoSize = true;
+            this.labelSaturation.Location = new System.Drawing.Point(393, 410);
+            this.labelSaturation.Name = "labelSaturation";
+            this.labelSaturation.Size = new System.Drawing.Size(55, 13);
+            this.labelSaturation.TabIndex = 2;
+            this.labelSaturation.Text = "Saturation";
+            // 
+            // HueLabel
+            // 
+            this.HueLabel.AutoSize = true;
+            this.HueLabel.Location = new System.Drawing.Point(393, 344);
+            this.HueLabel.Name = "HueLabel";
+            this.HueLabel.Size = new System.Drawing.Size(27, 13);
+            this.HueLabel.TabIndex = 2;
+            this.HueLabel.Text = "Hue";
+            // 
+            // trackBarSaturation
+            // 
+            this.trackBarSaturation.LargeChange = 1;
+            this.trackBarSaturation.Location = new System.Drawing.Point(447, 401);
+            this.trackBarSaturation.Name = "trackBarSaturation";
+            this.trackBarSaturation.Size = new System.Drawing.Size(215, 45);
+            this.trackBarSaturation.TabIndex = 1;
+            this.trackBarSaturation.Scroll += new System.EventHandler(this.trackBarSaturation_Scroll);
+            // 
+            // trackBarHue
+            // 
+            this.trackBarHue.LargeChange = 1;
+            this.trackBarHue.Location = new System.Drawing.Point(447, 335);
+            this.trackBarHue.Maximum = 5;
+            this.trackBarHue.Name = "trackBarHue";
+            this.trackBarHue.Size = new System.Drawing.Size(215, 45);
+            this.trackBarHue.TabIndex = 1;
+            this.trackBarHue.Scroll += new System.EventHandler(this.trackBarHue_Scroll);
+            // 
+            // pictureColorNew
+            // 
+            this.pictureColorNew.Location = new System.Drawing.Point(366, 33);
+            this.pictureColorNew.Name = "pictureColorNew";
+            this.pictureColorNew.Size = new System.Drawing.Size(326, 280);
+            this.pictureColorNew.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureColorNew.TabIndex = 0;
+            this.pictureColorNew.TabStop = false;
+            // 
+            // pictureColorOriginal
+            // 
+            this.pictureColorOriginal.Location = new System.Drawing.Point(17, 32);
+            this.pictureColorOriginal.Name = "pictureColorOriginal";
+            this.pictureColorOriginal.Size = new System.Drawing.Size(326, 280);
+            this.pictureColorOriginal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureColorOriginal.TabIndex = 0;
+            this.pictureColorOriginal.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1003, 552);
+            this.Controls.Add(this.panelColor);
             this.Controls.Add(this.panelDithering);
             this.Controls.Add(this.panelGray);
             this.Controls.Add(this.ChartPanel);
@@ -647,6 +741,12 @@ namespace lab_1
             this.panelDithering.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDitheringNew)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDitheringOrigilan)).EndInit();
+            this.panelColor.ResumeLayout(false);
+            this.panelColor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarSaturation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarHue)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureColorNew)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureColorOriginal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -707,6 +807,14 @@ namespace lab_1
         private System.Windows.Forms.Panel panelDithering;
         private System.Windows.Forms.PictureBox pictureBoxDitheringNew;
         private System.Windows.Forms.PictureBox pictureBoxDitheringOrigilan;
+        private System.Windows.Forms.ToolStripMenuItem simpleColorizeToolStripMenuItem;
+        private System.Windows.Forms.Panel panelColor;
+        private System.Windows.Forms.PictureBox pictureColorNew;
+        private System.Windows.Forms.PictureBox pictureColorOriginal;
+        private System.Windows.Forms.Label labelSaturation;
+        private System.Windows.Forms.Label HueLabel;
+        private System.Windows.Forms.TrackBar trackBarSaturation;
+        private System.Windows.Forms.TrackBar trackBarHue;
     }
 }
 

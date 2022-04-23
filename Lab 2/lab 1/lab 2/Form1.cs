@@ -946,6 +946,9 @@ namespace lab_1
             Gray3.Image = gray3;
 
         }
+        
+        
+        //Dithering ////////////////////////////////////
 
         private void orderedDitheringToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -1026,6 +1029,402 @@ namespace lab_1
                         bitmap.SetPixel(i, j, Color.FromArgb(255, 255, 255));
                 }
         }
+
+        private void floydSteinbergToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (bmp == null) { loadImage(); }
+
+            panelDithering.Show();
+            panelDithering.BringToFront();
+
+            pictureBoxDitheringOrigilan.Image = bmp;
+
+            Bitmap input = (Bitmap)bmp.Clone();
+            Bitmap temp;
+
+            temp = DitherCalculateAndSave(input);
+            pictureBoxDitheringNew.Image = temp;
+        }
+
+        public Bitmap DitherCalculateAndSave(Bitmap input)
+        {
+            Bitmap dithered = DoDithering(input);
+            double mse = CalculateMSE(input, dithered);
+            double psrn = CalculatePSRN(mse);
+
+
+             return dithered;
+            // Console.WriteLine("Method: " + method.GetMethodName() + " PSRN: " + psrn);
+            // dithered.Save(filenameWithoutExtension + method.GetFilenameAddition() + ".png");
+        }
+
+
+        byte[] currentBitmapAsByteArray = null;
+        
+
+        private Bitmap DoDithering(Bitmap input)
+        {
+            /*
+            // Copy input to different bitmap so it can be modified
+            Bitmap currentBitmap = new Bitmap(input);
+
+            Color originalPixel = Color.White; // Default value isn't used
+            Color newPixel = Color.White; // Default value isn't used
+            short[] quantError = null; // Default values aren't used
+
+            for (int y = 0; y < input.Height; y++)
+            {
+                for (int x = 0; x < input.Width; x++)
+                {
+                    originalPixel = currentBitmap.GetPixel(x, y);
+                    //newPixel = this.colorFunction(originalPixel);
+                    newPixel = TrueColorToWebSafeColor(originalPixel);
+                    currentBitmap.SetPixel(x, y, newPixel);
+
+                    //quantError = GetQuantError(originalPixel, newPixel);
+
+                    //PushError(x, y, quantError);
+                }
+            }
+
+            return currentBitmap;*/
+
+            
+            // Lock input bitmap for reading
+            Rectangle rect = new Rectangle(0, 0, input.Width, input.Height);
+            System.Drawing.Imaging.BitmapData bmpData =
+                input.LockBits(rect, System.Drawing.Imaging.ImageLockMode.ReadOnly,
+                input.PixelFormat);
+
+            // Get the address of the first line.
+            IntPtr ptr = bmpData.Scan0;
+
+            // Declare an array to hold the bytes of the bitmap. 
+            int byteCount = Math.Abs(bmpData.Stride) * input.Height;
+            this.currentBitmapAsByteArray = new byte[byteCount];
+
+            // Copy the RGB values into the array.
+            System.Runtime.InteropServices.Marshal.Copy(ptr, this.currentBitmapAsByteArray, 0, byteCount);
+
+            // Release the lock
+            input.UnlockBits(bmpData);
+
+            Color originalPixel = Color.White; // Default value isn't used
+            Color newPixel = Color.White; // Default value isn't used
+            short[] quantError = null; // Default values aren't used
+
+            for (int y = 0; y < input.Height; y++)
+            {
+                for (int x = 0; x < input.Width; x++)
+                {
+                    originalPixel = GetColorFromByteArray(this.currentBitmapAsByteArray, x, y, input.Width);
+                    newPixel = TrueColorToWebSafeColor(originalPixel);
+
+                    SetColorToByteArray(this.currentBitmapAsByteArray, x, y, input.Width, newPixel);
+
+                    //quantError = GetQuantError(originalPixel, newPixel);
+                    //PushError(x, y, quantError);
+                }
+            }
+
+            // Create new bitmap
+            Bitmap returnBitmap = new Bitmap(input.Width, input.Height);
+            // Lock it
+            bmpData =
+                returnBitmap.LockBits(rect, System.Drawing.Imaging.ImageLockMode.WriteOnly,
+                input.PixelFormat);
+            // Get the address of the first line.
+            ptr = bmpData.Scan0;
+            // Copy array to it
+            System.Runtime.InteropServices.Marshal.Copy(this.currentBitmapAsByteArray, 0, ptr, byteCount);
+            // Unlock the bitmap
+            returnBitmap.UnlockBits(bmpData);
+
+            return returnBitmap;
+        }
+
+        private static Color GetColorFromByteArray(byte[] byteArray, int x, int y, int width)
+        {
+            int baseAddress = 3 * (y * width + x);
+            return Color.FromArgb(byteArray[baseAddress + 2], byteArray[baseAddress + 1], byteArray[baseAddress]);
+        }
+
+        private static void SetColorToByteArray(byte[] byteArray, int x, int y, int width, Color color)
+        {
+            int baseAddress = 3 * (y * width + x);
+            byteArray[baseAddress + 2] = color.R;
+            byteArray[baseAddress + 1] = color.G;
+            byteArray[baseAddress] = color.B;
+        }
+
+        protected short[] GetQuantError(Color originalPixel, Color newPixel)
+        {
+            short[] returnValue = new short[4];
+
+            returnValue[0] = (short)(originalPixel.R - newPixel.R);
+            returnValue[1] = (short)(originalPixel.G - newPixel.G);
+            returnValue[2] = (short)(originalPixel.B - newPixel.B);
+            returnValue[3] = (short)(originalPixel.A - newPixel.A);
+
+            return returnValue;
+        }
+
+        private static double CalculateMSE(Bitmap original, Bitmap dithered)
+        {
+            long mseR = 0;
+            long mseG = 0;
+            long mseB = 0;
+
+            int difference = 0;
+
+            for (int i = 0; i < original.Width; i++)
+            {
+                for (int j = 0; j < original.Height; j++)
+                {
+                    difference = original.GetPixel(i, j).R - dithered.GetPixel(i, j).R;
+                    mseR += (difference * difference);
+
+                    difference = original.GetPixel(i, j).G - dithered.GetPixel(i, j).G;
+                    mseG += (difference * difference);
+
+                    difference = original.GetPixel(i, j).B - dithered.GetPixel(i, j).B;
+                    mseB += (difference * difference);
+                }
+            }
+
+            return (double)(mseR + mseG + mseB) / (double)((original.Width * original.Height) * 3);
+        }
+
+        private static double CalculatePSRN(double mse)
+        {
+            return 10 * Math.Log(255 * 255 / mse) / Math.Log(10);
+        }
+
+        private static Color TrueColorToWebSafeColor(Color inputColor)
+        {
+            Color returnColor = Color.FromArgb((byte)Math.Round(inputColor.R / 51.0) * 51,
+                                                (byte)Math.Round(inputColor.G / 51.0) * 51,
+                                                (byte)Math.Round(inputColor.B / 51.0) * 51);
+            return returnColor;
+        }
+
+        protected bool IsValidCoordinate(int x, int y)
+        {
+            return (0 <= x && x < this.bmp.Width && 0 <= y && y < this.bmp.Height);
+        }
+
+        private void PushError(int x, int y, short[] quantError)
+        {
+            // Push error
+            // 			X		7/16
+            // 3/16		5/16	1/16
+
+            int xMinusOne = x - 1;
+            int xPlusOne = x + 1;
+            int yPlusOne = y + 1;
+
+            // Current row
+            if (this.IsValidCoordinate(xPlusOne, y))
+            {
+                this.ModifyImageWithErrorAndMultiplier(xPlusOne, y, quantError, 7.0f / 16.0f);
+            }
+
+            // Next row
+            if (this.IsValidCoordinate(xMinusOne, yPlusOne))
+            {
+                this.ModifyImageWithErrorAndMultiplier(xMinusOne, yPlusOne, quantError, 3.0f / 16.0f);
+            }
+
+            if (this.IsValidCoordinate(x, yPlusOne))
+            {
+                this.ModifyImageWithErrorAndMultiplier(x, yPlusOne, quantError, 5.0f / 16.0f);
+            }
+
+            if (this.IsValidCoordinate(xPlusOne, yPlusOne))
+            {
+                this.ModifyImageWithErrorAndMultiplier(xPlusOne, yPlusOne, quantError, 1.0f / 16.0f);
+            }
+        }
+
+        public void ModifyImageWithErrorAndMultiplier(int x, int y, short[] quantError, float multiplier)
+        {
+            Color oldColor = Color.White; // Default color isn't used
+            
+                oldColor = this.bmp.GetPixel(x, y);
+            
+
+            // We limit the color here because we don't want the value go over 255 or under 0
+            Color newColor = Color.FromArgb(
+                                //GetLimitedValue(oldColor.A, (int)Math.Round(quantError[3] * multiplier)),
+                                GetLimitedValue(oldColor.R, (int)Math.Round(quantError[0] * multiplier)),
+                                GetLimitedValue(oldColor.G, (int)Math.Round(quantError[1] * multiplier)),
+                                GetLimitedValue(oldColor.B, (int)Math.Round(quantError[2] * multiplier)));
+
+            
+                this.bmp.SetPixel(x, y, newColor);
+            
+        }
+
+        private static byte GetLimitedValue(byte original, int error)
+        {
+            int newValue = original + error;
+            return (byte)Clamp(newValue, byte.MinValue, byte.MaxValue);
+        }
+
+        private static int Clamp(int value, int min, int max)
+        {
+            return (value < min) ? min : (value > max) ? max : value;
+        }
+
+        //colorize /////////////////////////////////////////////////////
+
+        
+
+        private void simpleColorizeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            if(bmp == null) { loadImage(); }
+            panelColor.Show();
+            panelColor.BringToFront();
+
+            pictureColorOriginal.Image = bmp;
+            pictureColorNew.Image = bmp;
+
+
+        }
+
+
+        private void drawHueSaturation(double hue, double saturation)
+        {
+
+            pictureColorOriginal.Image = bmp;
+
+            Bitmap image = (Bitmap)bmp.Clone();
+
+            for (int x = 0; x < image.Width - 1; x++)
+            {
+                for (int y = 0; y < image.Height - 1; y++)
+                {
+                    Color pixel = image.GetPixel(x, y);
+
+                    Color tmp = HSLtoRGB( pixel.R,  pixel.G,  pixel.B,  saturation,  hue);
+
+                    image.SetPixel(x, y, tmp);
+                }
+            }
+
+            pictureColorNew.Image = image;
+        }
+
+        private void trackBarHue_Scroll(object sender, EventArgs e)
+        {
+            Bitmap newBitmap = (Bitmap)bmp.Clone();
+            drawHueSaturation(trackBarHue.Value, trackBarSaturation.Value*0.1);
+            
+
+        }
+
+        private void trackBarSaturation_Scroll(object sender, EventArgs e)
+        {
+            Bitmap newBitmap = (Bitmap)bmp.Clone();
+            drawHueSaturation(trackBarHue.Value, trackBarSaturation.Value*0.1);
+        }
+
+        public Color HSLtoRGB(Byte R, Byte G, Byte B, double saturation, double hue)
+        {
+            float _R = (R / 255f);
+            float _G = (G / 255f);
+            float _B = (B / 255f);
+
+            float _Min = Math.Min(Math.Min(_R, _G), _B);
+            float _Max = Math.Max(Math.Max(_R, _G), _B);
+            float _Delta = _Max - _Min;
+
+            float H = 0;
+            float S = 0;
+            float L = (float)((_Max + _Min) / 2.0f);
+
+            if (_Delta != 0)
+            {
+                if (L < 0.5f)
+                {
+                    S = (float)(_Delta / (_Max + _Min));
+                }
+                else
+                {
+                    S = (float)(_Delta / (2.0f - _Max - _Min));
+                }
+
+
+                if (_R == _Max)
+                {
+                    H = (_G - _B) / _Delta;
+                }
+                else if (_G == _Max)
+                {
+                    H = 2f + (_B - _R) / _Delta;
+                }
+                else if (_B == _Max)
+                {
+                    H = 4f + (_R - _G) / _Delta;
+                }
+            }
+
+            return ToRGB(S+ saturation, H+ hue, L);
+
+
+        }
+
+        public Color ToRGB(double Saturation, double Hue, float Luminosity)
+        {
+            byte r, g, b;
+            if (Saturation == 0)
+            {
+                r = (byte)Math.Round(Luminosity * 255d);
+                g = (byte)Math.Round(Luminosity * 255d);
+                b = (byte)Math.Round(Luminosity * 255d);
+            }
+            else
+            {
+                double t1, t2;
+                double th = Hue / 6.0d;
+
+                if (Luminosity < 0.5d)
+                {
+                    t2 = Luminosity * (1d + Saturation);
+                }
+                else
+                {
+                    t2 = (Luminosity + Saturation) - (Luminosity * Saturation);
+                }
+                t1 = 2d * Luminosity - t2;
+
+                double tr, tg, tb;
+                tr = th + (1.0d / 3.0d);
+                tg = th;
+                tb = th - (1.0d / 3.0d);
+
+                tr = ColorCalc(tr, t1, t2);
+                tg = ColorCalc(tg, t1, t2);
+                tb = ColorCalc(tb, t1, t2);
+                r = (byte)Math.Round(tr * 255d);
+                g = (byte)Math.Round(tg * 255d);
+                b = (byte)Math.Round(tb * 255d);
+            }
+            return Color.FromArgb(r, g, b);
+        }
+        private static double ColorCalc(double c, double t1, double t2)
+        {
+
+            if (c < 0) c += 1d;
+            if (c > 1) c -= 1d;
+            if (6.0d * c < 1.0d) return t1 + (t2 - t1) * 6.0d * c;
+            if (2.0d * c < 1.0d) return t2;
+            if (3.0d * c < 2.0d) return t1 + (t2 - t1) * (2.0d / 3.0d - c) * 6.0d;
+            return t1;
+        }
+
+
     }
 }
 
