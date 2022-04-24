@@ -1,0 +1,13 @@
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 3.1\lab 3\lab 2\bin\Release\net48\lab 3.exe.config
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 3.1\lab 3\lab 2\bin\Release\net48\lab 3.exe
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 3.1\lab 3\lab 2\bin\Release\net48\lab 3.pdb
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 3.1\lab 3\lab 2\obj\Release\net48\lab 3.csproj.AssemblyReference.cache
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 3.1\lab 3\lab 2\obj\Release\net48\lab_1.Form1.resources
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 3.1\lab 3\lab 2\obj\Release\net48\lab_1.Properties.Resources.resources
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 3.1\lab 3\lab 2\obj\Release\net48\lab 3.csproj.GenerateResource.cache
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 3.1\lab 3\lab 2\obj\Release\net48\lab 3.GeneratedMSBuildEditorConfig.editorconfig
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 3.1\lab 3\lab 2\obj\Release\net48\lab 3.AssemblyInfoInputs.cache
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 3.1\lab 3\lab 2\obj\Release\net48\lab 3.AssemblyInfo.cs
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 3.1\lab 3\lab 2\obj\Release\net48\lab 3.csproj.CoreCompileInputs.cache
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 3.1\lab 3\lab 2\obj\Release\net48\lab 3.exe
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 3.1\lab 3\lab 2\obj\Release\net48\lab 3.pdb

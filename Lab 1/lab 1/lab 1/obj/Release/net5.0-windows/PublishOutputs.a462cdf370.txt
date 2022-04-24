@@ -1,0 +1,5 @@
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 1\lab 1\lab 1\bin\Release\net5.0-windows\publish\lab 1.exe
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 1\lab 1\lab 1\bin\Release\net5.0-windows\publish\lab 1.dll
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 1\lab 1\lab 1\bin\Release\net5.0-windows\publish\lab 1.deps.json
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 1\lab 1\lab 1\bin\Release\net5.0-windows\publish\lab 1.runtimeconfig.json
+D:\AndLight\OneDrive - Faculty of Electronic Engineering\Fax\VIII_Semestar\Multimedijalni sistemi\2021-22\MMS_Lab\Lab 1\lab 1\lab 1\bin\Release\net5.0-windows\publish\lab 1.pdb
