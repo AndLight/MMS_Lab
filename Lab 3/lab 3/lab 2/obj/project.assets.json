@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\AndLight\\OneDrive - Faculty of Electronic Engineering\\Fax\\VIII_Semestar\\Multimedijalni sistemi\\2021-22\\MMS_Lab\\Lab 3.1\\lab 3\\lab 2\\lab 3.csproj",
+      "projectUniqueName": "D:\\AndLight\\OneDrive - Faculty of Electronic Engineering\\Fax\\VIII_Semestar\\Multimedijalni sistemi\\2021-22\\MMS_Lab\\Lab 3\\lab 3\\lab 2\\lab 3.csproj",
       "projectName": "lab 3",
-      "projectPath": "D:\\AndLight\\OneDrive - Faculty of Electronic Engineering\\Fax\\VIII_Semestar\\Multimedijalni sistemi\\2021-22\\MMS_Lab\\Lab 3.1\\lab 3\\lab 2\\lab 3.csproj",
+      "projectPath": "D:\\AndLight\\OneDrive - Faculty of Electronic Engineering\\Fax\\VIII_Semestar\\Multimedijalni sistemi\\2021-22\\MMS_Lab\\Lab 3\\lab 3\\lab 2\\lab 3.csproj",
       "packagesPath": "C:\\Users\\AndrijaMijajlovic\\.nuget\\packages\\",
-      "outputPath": "D:\\AndLight\\OneDrive - Faculty of Electronic Engineering\\Fax\\VIII_Semestar\\Multimedijalni sistemi\\2021-22\\MMS_Lab\\Lab 3.1\\lab 3\\lab 2\\obj\\",
+      "outputPath": "D:\\AndLight\\OneDrive - Faculty of Electronic Engineering\\Fax\\VIII_Semestar\\Multimedijalni sistemi\\2021-22\\MMS_Lab\\Lab 3\\lab 3\\lab 2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\AndrijaMijajlovic\\AppData\\Roaming\\NuGet\\NuGet.Config",
